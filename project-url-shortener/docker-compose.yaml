@@ -1,8 +1,6 @@
 services:
-  # Schema is baked into the image (db/Dockerfile) to avoid
-  # volume-mount complexity in k8s / OpenChoreo environments.
   postgres:
-    build: ./db
+    image: postgres:15-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
